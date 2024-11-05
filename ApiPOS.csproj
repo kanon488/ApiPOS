@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AppCode\DBContext\" />
     <Folder Include="AppCode\Models\" />
     <Folder Include="AppCode\Result\" />
     <Folder Include="AppCode\Response\" />
