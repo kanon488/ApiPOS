@@ -1,0 +1,39 @@
+# Build results
+bin/
+obj/
+out/
+
+# .NET Core specific
+project.lock.json
+project.fragment.lock.json
+project.nuget.cache
+artifacts/
+
+# OS-specific files
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# User-specific files
+*.env
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider specific
+.idea/
+
+# Visual Studio Code specific
+.vscode/
+.vscode/*
+
+# Logs
+*.log
+logs
+
+.vs/
