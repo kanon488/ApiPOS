@@ -1,4 +1,5 @@
 using ApiPOS.AppCode.DBContext;
+using ApiPOS.AppCode.Models.Seeders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -8,17 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-builder.Services.AddDbContext<DBContext>(options => 
+using (var scope = app.Services.CreateScope()) 
 {
-    if (builder.Configuration["AMBIENTE"] == "PROD")
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("CONEXION_PROD"));
-    }
-    else
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("CONEXION_DVLP"));
-    }
-});
+    using var dbContext = new DBContext();
+    //SeedAlmacenes.Seed(dbContext);
+    //SeedCategoria.Seed(dbContext);
+    //SeedProductos.Seed(dbContext);
+    //SeedPermisos.Seed(dbContext);
+    //SeedRoles.Seed(dbContext);
+    //SeedRolpermiso.Seed(dbContext);
+}
 
 // Configure the HTTP request pipeline.
 
