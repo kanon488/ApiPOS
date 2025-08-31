@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiPOS.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(AppDBContext))]
     [Migration("20250314023230_CreateProductsTable")]
     partial class CreateProductsTable
     {

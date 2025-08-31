@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiPOS.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(AppDBContext))]
     [Migration("20250317175539_ChanceNamePermisoToString")]
     partial class ChanceNamePermisoToString
     {

@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiPOS.AppCode.DBContext
 {
-    public class DBContext : DbContext
+    public class AppDBContext : DbContext
     {
-        public DBContext()
+        public AppDBContext()
         {
-            
+
         }
-        public DBContext(DbContextOptions<DBContext> options) : base(options) { }
+        public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) { }
 
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<MetodoPago> MetodosPago { get; set; }

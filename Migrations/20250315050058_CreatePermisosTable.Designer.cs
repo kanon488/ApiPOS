@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiPOS.Migrations
 {
-    [DbContext(typeof(DBContext))]
+    [DbContext(typeof(AppDBContext))]
     [Migration("20250315050058_CreatePermisosTable")]
     partial class CreatePermisosTable
     {

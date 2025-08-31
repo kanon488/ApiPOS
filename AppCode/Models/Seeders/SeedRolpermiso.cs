@@ -4,7 +4,7 @@ namespace ApiPOS.AppCode.Models.Seeders
 {
     public static class SeedRolpermiso
     {
-        public static void Seed(ApiPOS.AppCode.DBContext.DBContext context)
+        public static void Seed(ApiPOS.AppCode.DBContext.AppDBContext context)
         {
             if (!context.RolPermisos.Any())
             {

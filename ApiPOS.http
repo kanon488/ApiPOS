@@ -1,6 +1,6 @@
 @ApiPOS_HostAddress = http://localhost:5260
 
-GET {{ApiPOS_HostAddress}}/weatherforecast/
+GET {{ApiPOS_HostAddress}}/posmobile/v1/products?description=coca
 Accept: application/json
 
 ###
