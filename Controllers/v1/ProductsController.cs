@@ -1,6 +1,7 @@
 ﻿using ApiPOS.AppCode.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiPOS.Controllers.v1
 {
@@ -14,6 +15,20 @@ namespace ApiPOS.Controllers.v1
         public ProductsController(IProductService productService)
         {
             _productService = productService;
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProducto(int id)
+        {
+            var product = await _productService.GetById(id);
+
+            if (product == null)
+            {
+                return NotFound(new { message = "Producto no encontrado" });
+            }
+
+            return Ok(product);
         }
 
         [HttpGet]

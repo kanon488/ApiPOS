@@ -7,6 +7,7 @@ namespace ApiPOS.AppCode.Repositories
 
     public interface IProductRepository
     {
+        Task<Producto> GetById(int id);
         Task<IEnumerable<Producto>> SearchByNameAsync(string name);
     }
 
@@ -18,6 +19,20 @@ namespace ApiPOS.AppCode.Repositories
         {
             _dbContext = context; 
             }
+
+        public async Task<Producto> GetById(int id)
+        {
+            try
+            {
+                var product = await _dbContext.Productos.FindAsync(id);
+                return product;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
 
         public async Task<IEnumerable<Producto>> SearchByNameAsync(string name)
         {

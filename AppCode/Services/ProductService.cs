@@ -6,6 +6,7 @@ namespace ApiPOS.AppCode.Services
     public interface IProductService
     {
         Task<IEnumerable<Producto>> SearchProductsByName(string name);
+        Task<Producto> GetById(int id);
     }
     public class ProductService : IProductService
     {
@@ -15,6 +16,12 @@ namespace ApiPOS.AppCode.Services
         {
             _productRepository = productRepository;
         }
+
+        public async Task<Producto> GetById(int id)
+        {
+            return await _productRepository.GetById(id);    
+        }
+
         public async Task<IEnumerable<Producto>> SearchProductsByName(string name)
         {
            return await _productRepository.SearchByNameAsync(name);
